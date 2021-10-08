@@ -1,12 +1,8 @@
-import React from "react";
-import './Header.css';
+import React, { Component } from "react";
+import "./Header.css";
 
-export class Header extends React.Component {
-    render(): React.ReactElement {
-        return (
-            <div className="header">
-
-            </div>
-        )
-    }
+export class Header extends Component {
+  render(): React.ReactElement {
+    return <div className="header"/>;
+  }
 }
