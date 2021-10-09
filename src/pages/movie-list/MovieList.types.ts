@@ -1,6 +1,4 @@
 export interface IState {
-    error?: null | Error;
-    isLoaded: boolean;
     items: Result[];
 }
 
