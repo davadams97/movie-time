@@ -1,0 +1,16 @@
+.navbar {
+    background-color: rgba(0, 0, 0, 0.73);
+    height: 6vh;
+    display: flex;
+    align-items: center;
+}
+
+.header-title {
+    color: white;
+    margin-left: 20px;
+}
+
+.navigation-icon {
+    color: white;
+    margin-left: 20px;
+}
