@@ -1,0 +1,29 @@
+.page {
+    margin: 10px;
+}
+
+.title {
+    padding: 8px;
+}
+
+.description-container {
+    display: flex;
+}
+
+.description {
+    padding: 5px;
+    margin: 10px;
+}
+
+.trailer-container {
+    display: flex;
+    height: 8vh;
+    padding: 5px;
+    margin-bottom: 8px;
+    align-items: center;
+    background: #e5d8d8;
+}
+
+.icon {
+    margin: 10px;
+}
