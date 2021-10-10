@@ -22,37 +22,18 @@ export class MovieInformation extends Component<any, { res: RootObject | null }>
         const buttonText: string = 'Add to Favorite';
         const { res } = this.state;
         return (
-            <div className="page">
+            <div data-testid="page" className="page">
                 <div className="title">
                     <h2>{res?.original_title}</h2>
                 </div>
 
                 <div className="description-container">
                     <img
-                        src={
-                            res?.poster_path
-                                ? `https://image.tmdb.org/t/p/w185${res?.poster_path}`
-                                : ''
-                        }
+                        src={res?.poster_path ? `https://image.tmdb.org/t/p/w185${res?.poster_path}` : ''}
                         alt={`${res?.original_title}`}
                     />
 
-                    <div className="description">
-                        <div>
-                            <span className="date">{res?.release_date.split('-')[0] ?? ''}</span>
-                        </div>
-                        <div>
-                            <em>{res?.runtime} mins.</em>
-                        </div>
-                        <div className="rating">
-                            <span>
-                                <strong>
-                                    {res?.vote_average}/{totalRating}
-                                </strong>
-                            </span>
-                        </div>
-                        <button id="btn">{buttonText}</button>
-                    </div>
+                    <Description totalRating={totalRating} buttonText={buttonText} movieDescription={res} />
                 </div>
 
                 <div>
