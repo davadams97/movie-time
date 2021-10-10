@@ -14,8 +14,10 @@ You need to acquire an API key to access the APIs used within the app. Please us
 the [link](https://developers.themoviedb.org/3/getting-started/introduction) to register an 
 account and retrieve an API key. 
 
-The application uses a `.env` file. The API is stored under the key `REACT_APP_API_KEY`.
-Please add the API key here. 
+The application uses a `.env` file. The steps to configure your environment are :
+
+- Create and add a file named `.env` at the root of the project 
+- The API is stored under the key `REACT_APP_API_KEY`. Please add the API key here.
 
 ##### Running the application
 
