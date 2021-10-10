@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { IState, Result, RootResult } from './MovieList.types';
-import './MovieList.css';
-import { handle } from '../../utility/handleRequest';
+import React, { Component } from "react";
+import { IState, Result } from "./MovieList.types";
+import "./MovieList.css";
+import { loadMovieList } from "./MovieList.service";
 
 export class MovieList extends Component<any, IState> {
     constructor(props: any) {
@@ -23,25 +23,8 @@ export class MovieList extends Component<any, IState> {
         ));
     }
 
-    /**
-     * Utility function load movie list
-     */
-    async loadMovieList(): Promise<RootResult> {
-        // TODO: Implementation of error handling can be improved. For now log to console.
-
-        const [movieList, err] = await handle(
-            fetch(`http://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}`)
-        );
-        if (err) console.error(err);
-
-        const [finalResponse, movieListError] = await handle(movieList.json());
-        if (movieListError) console.error(err);
-
-        return finalResponse;
-    }
-
     async componentDidMount(): Promise<void> {
-        const finalResponse = await this.loadMovieList();
+        const finalResponse = await loadMovieList();
         this.setState({ items: finalResponse.results });
         this.props.callback('Popular Movies');
     }
