@@ -10,12 +10,6 @@
     display: flex;
 }
 
-.description {
-    margin: 0 10px 0 10px;
-    display: flex;
-    flex-direction: column;
-}
-
 .trailer-container {
     display: flex;
     height: 8vh;
@@ -27,19 +21,4 @@
 
 .icon {
     margin: 10px;
-}
-
-.date {
-    font-weight: bolder;
-    font-size: x-large;
-}
-
-.rating {
-    margin-top: auto;
-}
-
-#btn {
-    padding: 20px;
-    margin: 4px;
-    margin-top: auto;
 }
