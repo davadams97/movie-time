@@ -21,8 +21,9 @@ The application uses a `.env` file. The steps to configure your environment are 
 
 ##### Running the application
 
-Using the terminal, enter the root level of project. 
-
+- Clone the project to your machine.
+- Ensure your node and npm versions are updated to the suported versions (`Node <= 14.0.0` and `npm >= 5.6`).
+- Using the terminal, enter the root level of project. 
 - Run `npm install`.
 - Run `npm run start`.
 
