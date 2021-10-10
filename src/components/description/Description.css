@@ -1,0 +1,20 @@
+.description {
+    margin: 0 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.date {
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.rating {
+    margin-top: auto;
+}
+
+#btn {
+    padding: 20px;
+    margin: 4px;
+    margin-top: auto;
+}

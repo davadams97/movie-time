@@ -1,9 +1,9 @@
 import './Main.css';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route, Switch, Redirect } from 'react-router-dom';
-import { MovieList } from './pages/movie-list/MovieList';
-import { MovieInformation } from './pages/movie-information/MovieInformation';
 import { FaArrowLeft } from 'react-icons/fa';
+import {MovieList} from "../movie-list/MovieList";
+import {MovieInformation} from "../movie-information/MovieInformation";
 
 export class Main extends Component<any, { pageName: string }> {
     constructor(props: any) {
@@ -16,33 +16,31 @@ export class Main extends Component<any, { pageName: string }> {
         this.setState({ pageName: name });
     }
 
+    /**
+     * Since we want to conditionally render the back button, we capture the location to determine the page
+     */
     determineTitle(): React.ReactElement | null {
-        const { pageName } = this.state;
-
-        // Since we want to conditionally render the back button, we capture the location to determine the page
-        if (window.location.pathname.split('/')[1] === 'movie-list') {
+        if (window.location.pathname.split('/')[1] === 'movie-information') {
             return (
-                <div className="navbar">
-                    <span className="header-title">{pageName}</span>
-                </div>
-            );
-        } else {
-            return (
-                <div className="navbar">
-                    <Link to="/movie-list">
-                        <FaArrowLeft className="navigation-icon" />
-                    </Link>
-                    <span className="header-title">{pageName}</span>
-                </div>
+                <Link to="/movie-list">
+                    <FaArrowLeft className="navigation-icon" />
+                </Link>
             );
         }
+
+        return null;
     }
 
     render(): React.ReactElement {
+        const { pageName } = this.state;
+
         return (
             <div>
                 <Router>
-                    {this.determineTitle()}
+                    <div className="navbar">
+                        {this.determineTitle()}
+                        <span className="header-title">{pageName}</span>
+                    </div>
 
                     <Switch>
                         <Route

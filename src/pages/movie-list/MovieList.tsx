@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { IState, Result, RootResult } from './MovieList.types';
 import './MovieList.css';
-import { handle } from '../../utility/handleError';
+import { handle } from '../../utility/handleRequest';
 
 export class MovieList extends Component<any, IState> {
     constructor(props: any) {
