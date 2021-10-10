@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="description"
+  data-testid="desc"
+>
+  <div>
+    <span
+      className="date"
+      data-testid="date"
+    >
+      2021
+    </span>
+  </div>
+  <div>
+    <em>
+      233
+       mins.
+    </em>
+  </div>
+  <div
+    className="rating"
+  >
+    <span>
+      <strong
+        data-testid="rating"
+      >
+        7.2
+        /
+        7.5
+      </strong>
+    </span>
+  </div>
+  <button
+    data-testid="button"
+    id="btn"
+  >
+    Click here!
+  </button>
+</div>
+`;
