@@ -39,7 +39,7 @@ export class Main extends Component<any, { pageName: string }> {
                 <Router>
                     <div className="navbar">
                         {this.determineTitle()}
-                        <span className="header-title">{pageName}</span>
+                        <span data-testid="pagename" className="header-title">{pageName}</span>
                     </div>
 
                     <Switch>

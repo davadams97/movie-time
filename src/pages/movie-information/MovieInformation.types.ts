@@ -12,7 +12,7 @@ export interface Genre {
 
 export interface ProductionCompany {
     id: number;
-    logo_path: string;
+    logo_path: string | null;
     name: string;
     origin_country: string;
 }
@@ -31,7 +31,7 @@ export interface SpokenLanguage {
 export interface RootObject {
     adult: boolean;
     backdrop_path: string;
-    belongs_to_collection: BelongsToCollection;
+    belongs_to_collection: BelongsToCollection | null;
     budget: number;
     genres: Genre[];
     homepage: string;

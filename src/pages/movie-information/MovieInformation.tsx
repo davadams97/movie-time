@@ -1,37 +1,19 @@
-import React, { Component } from 'react';
-import { RootObject } from './MovieInformation.types';
-import { BsPlayCircle } from 'react-icons/bs';
-import './MovieInformation.css';
-import { handle } from '../../utility/handleRequest';
-import { Description } from '../../components/description/Description';
+import React, { Component } from "react";
+import { RootObject } from "./MovieInformation.types";
+import { BsPlayCircle } from "react-icons/bs";
+import "./MovieInformation.css";
+import { Description } from "../../components/description/Description";
+import { loadMovie } from "./MovieInformation.service";
 
-export class MovieInformation extends Component<any, { res: Partial<RootObject> | null }> {
+export class MovieInformation extends Component<any, { res: RootObject | null }> {
     constructor(props: any) {
         super(props);
         this.state = { res: null };
     }
 
-    /**
-     * Utility function load movie details
-     * @param id, movie ID
-     */
-    async loadMovie(id: number): Promise<RootObject> {
-        // TODO: Implementation of error handling can be improved. For now log to console.
-
-        const [movie, err] = await handle(
-            fetch(`http://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}`)
-        );
-        if (err) console.error(err);
-
-        const [movieJson, movieListError] = await handle(movie.json());
-        if (movieListError) console.error(movieListError);
-
-        return movieJson;
-    }
-
     async componentDidMount(): Promise<void> {
         const { id } = this.props.match.params;
-        const res = await this.loadMovie(id);
+        const res = await loadMovie(id);
 
         this.setState({ res: res });
         this.props.callback('Movie Details');
