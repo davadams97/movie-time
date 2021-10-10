@@ -21,7 +21,10 @@ The application uses a `.env` file. The steps to configure your environment are 
 
 ##### Running the application
 
-Using the terminal, enter the root level of project. Run `npm run start`.
+Using the terminal, enter the root level of project. 
+
+- Run `npm install`.
+- Run `npm run start`.
 
  
 
